@@ -1,4 +1,5 @@
 import initialState from './initialState.js'
+import { createStore } from 'redux'
 
 const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 
@@ -12,3 +13,7 @@ function reducer (state = initialState, action){
         default: return state;
     }
 }
+
+let store = createStore(reducer);
+
+console.log(store.getState())
