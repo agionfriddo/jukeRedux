@@ -2,10 +2,10 @@ import initialState from './initialState.js'
 import { createStore } from 'redux'
 import { applyMiddleware } from 'redux'
 import createLogger from 'redux-logger'
-
+import thunkMiddleware from 'redux-thunk'
 // console.log("CREATELOGGER", createLogger)
 
-var myMiddle = applyMiddleware(createLogger())
+var myMiddle = applyMiddleware(createLogger(), thunkMiddleware)
 
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 
