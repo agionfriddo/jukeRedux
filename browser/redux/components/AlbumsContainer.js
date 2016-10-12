@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Albums from './Albums'
 import {RECEIVE_ALBUMS} from '../../react/ourRedux.js'
+import { receiveAlbums } from '../ActionCreators'
 
 const mapStateToProps = function (state, ownProps) {
     return {
@@ -12,7 +13,7 @@ const mapDispatchToProps = function(dispatch, ownProps){
     //This returns an object. loadAlbums is a method of the object.
     return {
         loadAlbums (albums){
-            dispatch({ type: RECEIVE_ALBUMS, albums: albums});
+            dispatch(receiveAlbums(albums));
         }
     }
 }
