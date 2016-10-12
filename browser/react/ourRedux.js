@@ -1,5 +1,9 @@
 import initialState from './initialState.js'
 import { createStore } from 'redux'
+import { applyMiddleware } from 'redux'
+import { createLogger } from 'redux-logger'
+
+var myMiddle = applyMiddleware(createLogger())
 
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 
@@ -17,7 +21,7 @@ function reducer (state = initialState, action){
     }
 }
 
-let store = createStore(reducer);
+let store = createStore(reducer, myMiddle);
 
 
 // store.dispatch hands its argument to the reducer function
