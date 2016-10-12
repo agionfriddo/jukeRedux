@@ -10,7 +10,7 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch, ownProps) {
   //This returns an object. loadAlbums is a method of the object.
   return {
-    loadAlbums(albums) {
+    loadAlbums() { //I deleted the albums argument since we never invoke with an arg
       // fetchAlbums invoked, returns a function THUNK recognizes that dispatch has
       // been passed a function instead of a Action Obj, so it says, ' i better handle
       // this async shit' THUNK should handle passing the dispatch func to

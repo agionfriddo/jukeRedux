@@ -31,7 +31,40 @@ const skip = (interval, { currentSongList, currentSong }) => {
   return [next, currentSongList];
 };
 
-export default class AppContainer extends Component {
+const mapStateToProps = function (state, ownProps){
+  return state;
+}
+
+const mapDispatchToProps = function (dispatch, ownProps){
+  //dispatchToProps should describe methods which we want to 
+  //provide to our component, such as functions that are invoked onclick
+  //action dispatches can be called inside action creators
+  //a dispatch method should simply fire an action
+  //the action can getState and make routing decisions about what 
+  //actions to actually fire.
+  
+  return {
+    invokePlay(){
+
+    },
+    invokePause(){
+      dispatch();
+    },
+    invokeStartSong(){
+
+      dispatch(startSong(song,list))
+    },
+  }
+}
+
+
+
+const connectedAppContainer = connect(mapStateToProps, mapDispatchToProps)
+export default connectedAppContainer;
+
+
+
+class AppContainer extends Component {
 
   constructor (props) {
     super(props);
