@@ -4,12 +4,10 @@ import {convertSong, convertAlbum} from '../../react/containers/AppContainer'
 class Albums extends Component
 {
     componentDidMount () {
-       fetch('/api/albums')
-        .then(res => res.json())
-        .then(albums => {
-            albums = albums.map( album => convertAlbum(album))
-            this.props.loadAlbums(albums)
-        })
+        //we're invoking loadAlbums without an arg this time
+        //because albumArr yet. albumArr exists because of an async call
+        // inside the fetchAlbums function which is invoked inside of loadAlbums
+        this.props.loadAlbums()
     }
 
     render(){

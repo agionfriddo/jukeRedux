@@ -13,7 +13,12 @@ const mapDispatchToProps = function(dispatch, ownProps){
     //This returns an object. loadAlbums is a method of the object.
     return {
         loadAlbums (albums){
-            dispatch(receiveAlbums(albums));
+            //fetchAlbums invoked, returns a function
+            //THUNK recognizes that dispatch has been passed a function
+            // instead of a Action Obj, so it says, ' i better handle this async shit'
+            // THUNK should handle passing the dispatch func to fetchAlbums
+            // so that dispatch can be called when its time comes
+            dispatch(fetchAlbumsFromServer());
         }
     }
 }

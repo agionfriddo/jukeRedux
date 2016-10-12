@@ -17,7 +17,7 @@ function reducer (state = initialState, action){
         case "RECEIVE_ALBUMS": return Object.assign(
             {},
             state,
-            {albumList: action.albums}
+            {albumList: action.albumsArr}
         )
         default: return state;
     }
