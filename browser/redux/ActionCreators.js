@@ -1,4 +1,6 @@
 import { RECEIVE_ALBUMS } from '../react/ourRedux'
+import {convertSong, convertAlbum} from '../react/containers/AppContainer'
+
 
 // We're moving the asynchronicity from componentDidMount into this ActionCreator'
 
@@ -13,8 +15,10 @@ export const fetchAlbumsFromServer = () => {
       fetch('/api/albums')
         .then(res => res.json())
         .then(albumsArr => {
+            albumsArr = albumsArr.map(anAlbum => convertAlbum(anAlbum))
             dispatch(receiveAlbums(albumsArr))
         })
   }
 
 }
+

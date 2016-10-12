@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {convertSong, convertAlbum} from '../../react/containers/AppContainer'
 // gotta connect stuff, import albums container
 class Albums extends Component
 {
