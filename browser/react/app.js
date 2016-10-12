@@ -6,6 +6,6 @@ import store from './ourRedux';
 import {Provider} from 'react-redux';
 
 ReactDOM.render(
-  <Provider store={store}>
+<Provider store={store}>
   <AppContainer/>
 </Provider>, document.getElementById('app'));

@@ -30,20 +30,42 @@ function albumListReducer(state = [], action) {
   }
 }
 
+function currentSongReducer(state = {}, action){
+  switch(action.type){
+    case "SET_CURRENT_SONG":
+      return action.currentSong;
+    default: state;
+  }
+}
 
-// function isPlayingReducer(state = false, action) {
-//   switch (action.type) {
-//     case "START_SONG":
-//       return action.
-//   }
-// }
+function songListReducer(state = [], action){
+  switch(action.type){
+    case "SET_CURRENT_SONG":
+      return action.currentSongList;
+    default: state;
+  }
+}
+
+
+function isPlayingReducer(state = false, action) {
+  switch (action.type) {
+    case "START_PLAYING":
+      return true;
+    case "STOP_PLAYING":
+      return false;
+    default:
+      return state;
+  }
+}
 
 // The root reducer takes in data from the other reducers and then assigns the
 // properties that will be on the store. It is then passed to createStore to make
 // the new state.
 let rootReducer = combineReducers({
   albumList: albumListReducer,
-  isPlaying: isPlayingReducer
+  isPlaying: isPlayingReducer,
+  currentSongList: songListReducer,
+  currentSong: currentSongReducer
 });
 
 let store = createStore(rootReducer, myMiddle);

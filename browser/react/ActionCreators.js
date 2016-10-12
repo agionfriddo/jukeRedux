@@ -1,4 +1,4 @@
-import {RECEIVE_ALBUMS} from '../react/ourRedux'
+import {RECEIVE_ALBUMS, SET_CURRENT_SONG, START_PLAYING, STOP_PLAYING} from '../react/ourRedux'
 import {convertSong, convertAlbum} from './containers/AppContainer'
 import AUDIO from './audio'
 
