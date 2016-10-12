@@ -19,7 +19,7 @@ class Albums extends Component
                 <div className="row">
                     {
                         this.props.albumList.map( anAlbum => (
-                            <div className="col-xs-4">
+                            <div key={anAlbum.id} className="col-xs-4">
                             <a className="thumbnail" href="#">
                                 <img src= { anAlbum.imageUrl } />
                                 <div className="caption">
