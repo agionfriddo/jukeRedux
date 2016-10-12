@@ -1,9 +1,11 @@
 import initialState from './initialState.js'
 import { createStore } from 'redux'
 import { applyMiddleware } from 'redux'
-import { createLogger } from 'redux-logger'
+import createLogger from 'redux-logger'
 
-var myMiddle = applyMiddleware(createLogger)
+// console.log("CREATELOGGER", createLogger)
+
+var myMiddle = applyMiddleware(createLogger())
 
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 
