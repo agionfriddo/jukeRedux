@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Albums from './Albums'
+import Albums from '../components/Albums'
 import {RECEIVE_ALBUMS} from '../../react/ourRedux.js'
 import {fetchAlbumsFromServer} from '../ActionCreators'
 

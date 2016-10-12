@@ -1,5 +1,5 @@
 import {RECEIVE_ALBUMS} from '../react/ourRedux'
-import {convertSong, convertAlbum} from '../react/containers/AppContainer'
+import {convertSong, convertAlbum} from './containers/AppContainer'
 
 // We're moving the asynchronicity from componentDidMount into this
 // ActionCreator' THIS IS OUR ACTION CREATOR,
@@ -16,3 +16,5 @@ export const fetchAlbumsFromServer = () => {
   }
 
 }
+
+// export const startSong = *SOMETHING* => ({ type: START_PLAYING, *SOMETHING*})
