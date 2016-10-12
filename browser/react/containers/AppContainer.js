@@ -8,7 +8,7 @@ import AUDIO from '../audio';
 import Sidebar from '../components/Sidebar';
 import Album from '../components/Album';
 import Player from '../components/Player';
-import AlbumsContainer from '../../redux/components/AlbumsContainer'
+import AlbumsContainer from './AlbumsContainer'
 
 
 export const convertSong = song => {

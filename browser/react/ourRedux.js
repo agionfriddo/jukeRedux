@@ -8,6 +8,10 @@ import thunkMiddleware from 'redux-thunk'
 var myMiddle = applyMiddleware(createLogger(), thunkMiddleware)
 
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
+export const START_PLAYING = 'START_PLAYING';
+export const STOP_PLAYING = 'STOP_PLAYING';
+export const SET_CURRENT_SONG = 'SET_CURRENT_SONG';
+
 
 // receives action argument from store.dispatch it also receives state from
 // dispatch as well
@@ -26,11 +30,20 @@ function albumListReducer(state = [], action) {
   }
 }
 
+
+// function isPlayingReducer(state = false, action) {
+//   switch (action.type) {
+//     case "START_SONG":
+//       return action.
+//   }
+// }
+
 // The root reducer takes in data from the other reducers and then assigns the
 // properties that will be on the store. It is then passed to createStore to make
 // the new state.
 let rootReducer = combineReducers({
-  albumList: albumListReducer
+  albumList: albumListReducer,
+  isPlaying: isPlayingReducer
 });
 
 let store = createStore(rootReducer, myMiddle);

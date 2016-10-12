@@ -6,9 +6,7 @@ class Albums extends Component
     // we're invoking loadAlbums without an arg this time because albumArr yet.
     // albumArr exists because of an async call inside the fetchAlbums function
     // which is invoked inside of loadAlbums
-    this
-      .props
-      .loadAlbums()
+    this.props.loadAlbums()
   }
 
   render() {
