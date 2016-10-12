@@ -53,21 +53,21 @@ export default class AppContainer extends Component {
     AUDIO.addEventListener('timeupdate', () =>
       this.setProgress(AUDIO.currentTime / AUDIO.duration));
   }
-
+  // an action that renders the current album that we just clicked on, probably
   onLoad (album) {
     this.setState({ album });
   }
-
+  //sets state to play
   play () {
     AUDIO.play();
     this.setState({ isPlaying: true });
   }
-
+ //sets state to pause
   pause () {
     AUDIO.pause();
     this.setState({ isPlaying: false });
   }
-
+  // sets the state to what song we're playing and what list
   load (currentSong, currentSongList) {
     AUDIO.src = currentSong.audioUrl;
     AUDIO.load();
@@ -103,7 +103,8 @@ export default class AppContainer extends Component {
     AUDIO.currentTime = AUDIO.duration * decimal;
     this.setProgress(AUDIO.currentTime / AUDIO.duration);
   }
-
+  // updates the state every quarter second while played
+  //is fired by audio.
   setProgress (progress) {
     this.setState({ progress });
   }
