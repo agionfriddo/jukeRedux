@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-// gotta connect stuff, import albums container 
-class Albums extends Component 
+import {convertSong, convertAlbum} from '../../react/containers/AppContainer'
+// gotta connect stuff, import albums container
+class Albums extends Component
 {
-    componentDidMounts () {
+    componentDidMount () {
        fetch('/api/albums')
         .then(res => res.json())
-        .then 
+        .then(albums => {
+            albums = albums.map( album => convertAlbum(album))
+            this.props.loadAlbums(albums)
+        })
     }
 
-    render(props){
+    render(){
         return (
              <div>
                 <h3>Albums</h3>
@@ -39,7 +43,7 @@ class Albums extends Component
             </div>
              )
         }
-  
+
 }
 
 export default Albums;

@@ -1,7 +1,7 @@
 import initialState from './initialState.js'
 import { createStore } from 'redux'
 
-const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
+export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 
 
 // receives action argument from store.dispatch
@@ -19,10 +19,9 @@ function reducer (state = initialState, action){
 
 let store = createStore(reducer);
 
-console.log(store.getState())
 
 // store.dispatch hands its argument to the reducer function
-store.dispatch({ type: RECEIVE_ALBUMS, albums: [{Album: "Cool album"}] })
-console.log(store.getState())
+// store is aware of state because it receieves reducer as an argument
+// when it is created
 
 export default store;
