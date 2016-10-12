@@ -8,7 +8,7 @@ export const receiveAlbums = albumsArr => ({
   albumsArr
 });
 
-const fetchAlbumsFromServer = () => {
+export const fetchAlbumsFromServer = () => {
   return dispatch => {
       fetch('/api/albums')
         .then(res => res.json())
